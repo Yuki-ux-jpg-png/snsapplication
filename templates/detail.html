@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block customcss %}
+{% endblock customcss %}
+
+{% block header %}
+<div class="alert alert-primary" role="alert">
+    individuak post
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+    <div class="alert alert-success" role="alert">
+        <p>title:{{object.title}}</p>
+        <p>contributor:{{object.author}}</p>
+        <p>content:{{object.content}}</p>
+        <p><img src='{{object.images.url}}' width=300></p>
+        <a href="{% url 'good' object.pk %}" class="btn btn-primary" role="button" aria-pressed="true">Good</a>
+        <a href="{% url 'read' object.pk %}" class="btn btn-secondary" role="button" aria-pressed="true">Mark as read</a>
+    </div>
+</div>
+{% endblock content %}
